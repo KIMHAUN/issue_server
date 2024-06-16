@@ -39,9 +39,9 @@ app.put('/issues/:id', (req, res) => {
 });
 
 // Delete
-app.delete('/issues/:id', (req, res) => {
+app.get('/deleteIssue/:id', (req, res) => {
     const id = parseInt(req.params.id);
     issues = issues.filter(issue => issue.id !== id);
-    console.log('Deleted issue ID:', id);
-    res.status(204).send();
+    //console.log('Deleted issue ID:', id);
+    res.redirect('http://localhost:3000/');
 });
